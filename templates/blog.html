@@ -65,33 +65,31 @@
 
 
   <!-- blog section -->
-
-  <section class="blog_section layout_padding">
+<section class="blog_section layout_padding">
     <div class="container-fluid">
-      <div class="heading_container">
-        <h2>
-          Latest Blog
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-lg-6 ">
-          <div class="box">
-              {% for blog in blogs %}
-            <div class="img-box">
-              <img src="{{ blog.img.url }}" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>{{ blog.title }}</h5>
-              <a href="">
-                Read More
-              </a>
-            </div>
-              {% endfor %}
-          </div>
+        <div class="heading_container">
+            <h2>
+                Latest Blog
+            </h2>
+            <a href="{% url 'create' %}" class="btn btn-primary">Create</a>
         </div>
-      </div>
+        <div class="row">
+            {% for blog in blogs %}
+            <div class="col-lg-6">
+                <div class="box">
+                    <div class="img-box">
+                        <img src="{{ blog.img.url }}" alt="">
+                    </div>
+                    <div class="detail-box">
+                        <h5>{{ blog.title }}</h5>
+                        <a href="{% url 'detail' blog.id %}">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-  </section>
+</section>
 
   <!-- end blog section -->
 

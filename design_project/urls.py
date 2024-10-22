@@ -18,11 +18,15 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from app.views import IndexView,  BlogView
+from app.views import IndexView, BlogView, DeleteBlogView, UpdateBlogView, CreateBlogView, DetailBlogView
 from design_project import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='home'),
     path('blog/', BlogView.as_view(), name='blog'),
+    path('delete/<int:pk>', DeleteBlogView.as_view(), name='delete'),
+    path('update/<int:pk>', UpdateBlogView.as_view(), name='update'),
+    path('create/', CreateBlogView.as_view(), name='create'),
+    path('detail/<int:pk>', DetailBlogView.as_view(), name='detail'),
 ] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
