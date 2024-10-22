@@ -78,15 +78,10 @@
           <div class="box">
               {% for blog in blogs %}
             <div class="img-box">
-              <img src="{% blog.img.url %}" alt="">
+              <img src="{{ blog.img.url }}" alt="">
             </div>
             <div class="detail-box">
-              <h5>
-                Velit tempora molestias quae
-              </h5>
-              <p>
-                Omnis itaque ducimus excepturi dignissimos voluptatibus sequi nisi ut ullam, perspiciatis doloribus! Cum itaque sint quibusdam aut vel. A esse labore.
-              </p>
+              <h5>{{ blog.title }}</h5>
               <a href="">
                 Read More
               </a>

@@ -24,5 +24,5 @@ from design_project import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='home'),
-    path('about/', BlogView.as_view(), name='blog'),
+    path('blog/', BlogView.as_view(), name='blog'),
 ] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
